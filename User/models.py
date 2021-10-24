@@ -25,6 +25,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(_("staff status"),default=False) #loging part
     is_active = models.BooleanField(_("active"),default=False)
     is_verified = models.BooleanField(_("verified"),default=False)
+    # token= models.ForeignKey (Token, on_delete=models.CASCADE)
+
     #what the system will use to check during login 
     USERNAME_FIELD = 'user_email'
     REQUIRED_FIELDS=['f_name', 'l_name']

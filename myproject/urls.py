@@ -16,12 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from User.views import ListUsers, CustomAuthToken
+from Task.views import TaskViews
 # from Task.views import register_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path ('',include('User.urls')),
     path('api/token/auth/' , CustomAuthToken.as_view()),
-    path('api/users/' , ListUsers.as_view())
+    path('api/users/' , ListUsers.as_view()),
+    path('api/tasks/' , TaskViews.as_view())
     # path('register/', register_view, name="register"),
 ]
