@@ -1,5 +1,5 @@
-from django.contrib.auth.base_user import AbstractBaseUser
-from django.contrib.auth.models import PermissionsMixin
+from django.contrib.auth.base_user import AbstractBaseUser# model that contains the authentication functionality
+from django.contrib.auth.models import PermissionsMixin# adds superuser and user_permissions functionality
 from django.db import models
 
 #for authentication token generation
@@ -31,5 +31,5 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'user_email'
     REQUIRED_FIELDS=['f_name', 'l_name']
 
-    objects=UserManager()
+    objects=UserManager()#class for managing users has been assigned to a variable 
 
