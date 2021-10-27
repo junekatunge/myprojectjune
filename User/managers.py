@@ -4,7 +4,7 @@ from django.db.models import Q
 #from accounts.choices import ROLES_TYPE
 
 
-
+#manages the user model
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
@@ -69,6 +69,7 @@ class UserManager(BaseUserManager):
         password=None,
         **extra_fields
     ):
+        
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_active", True)
         extra_fields.setdefault("is_superuser", True)
