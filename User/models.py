@@ -8,9 +8,9 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 from User.managers import UserManager
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _ #translation function to translate to the end user language
 
-
+#to receive a signal that token has been assigned 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
