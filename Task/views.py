@@ -6,12 +6,11 @@ from .serializer import TaskSerializer
 from .models import Task, AssignTask
 from rest_framework.authentication import TokenAuthentication
 
-
+#API wrapper- Class based view
 class TaskViews(APIView):
     authentication_classes = [TokenAuthentication,]
     serializer_class= TaskSerializer
     permission_classes= (IsAuthenticated,)
-
 
 
     def post(self, request):
